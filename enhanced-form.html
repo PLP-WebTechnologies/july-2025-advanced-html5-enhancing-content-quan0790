@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enhanced HTML5 Form</title>
+  <meta name="description" content="An enhanced HTML5 form example with lists, tables, media, and validation features for demonstration purposes." />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      margin: 0;
+      padding: 1rem;
+      background-color: #f9f9f9;
+    }
+    header, main, footer {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #333;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 0.5rem;
+      text-align: left;
+    }
+    form {
+      margin-top: 1rem;
+    }
+    label {
+      display: block;
+      margin-top: 0.75rem;
+      font-weight: bold;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      box-sizing: border-box;
+    }
+    fieldset {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    legend {
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    img, video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Enhanced Form Example</h1>
+    <p>This page demonstrates a well-structured HTML5 form with various input fields, lists, tables, and media, complete with accessibility and validation features.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Features List</h2>
+      <ul>
+        <li>HTML5 semantic structure</li>
+        <li>Various input types with validation</li>
+        <li>Accessible form layout</li>
+        <li>Lists, tables, and media elements</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Sample Price Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Description</th>
+            <th>Price (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Web Hosting</td>
+            <td>Basic hosting package for small sites</td>
+            <td>$10/mo</td>
+          </tr>
+          <tr>
+            <td>Domain Registration</td>
+            <td>Register your custom domain name</td>
+            <td>$12/yr</td>
+          </tr>
+          <tr>
+            <td>SEO Optimization</td>
+            <td>Improve search engine ranking</td>
+            <td>$50</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Media Example</h2>
+      <img src="https://via.placeholder.com/800x300.png?text=Sample+Image" alt="Sample placeholder image">
+      <video controls width="100%">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section>
+      <h2>Contact & Registration Form</h2>
+      <form action="#" method="post" autocomplete="on">
+        
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 555 123 456" pattern="\\+?[0-9\\s-]{7,15}" required>
+
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required>
+
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">--Select--</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="prefer_not">Prefer not to say</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Account Details</legend>
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Choose a username" required>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Choose a password" required minlength="6">
+
+          <label for="confirm_password">Confirm Password</label>
+          <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter password" required minlength="6">
+
+          <label for="account_id">Account ID (Read-only)</label>
+          <input type="text" id="account_id" name="account_id" value="ACC-12345" readonly>
+        </fieldset>
+
+        <fieldset>
+          <legend>Additional Information</legend>
+          <label for="services">Services Interested In</label>
+          <select id="services" name="services[]" multiple required>
+            <option value="hosting">Web Hosting</option>
+            <option value="domain">Domain Registration</option>
+            <option value="seo">SEO Optimization</option>
+          </select>
+
+          <label for="comments">Comments</label>
+          <textarea id="comments" name="comments" placeholder="Your message here..." rows="4"></textarea>
+
+          <label>
+            <input type="checkbox" name="newsletter" value="yes"> Subscribe to newsletter
+          </label>
+
+          <label>
+            <input type="radio" name="terms" value="agree" required> I agree to the terms & conditions
+          </label>
+        </fieldset>
+
+        <button type="submit">Submit Form</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Enhanced Form Demo. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
